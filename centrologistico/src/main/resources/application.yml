@@ -1,0 +1,43 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: centro-logistico
+
+server:
+  port: 9999
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.string}
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 1
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://192.168.99.100:8761/eureka}
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+ribbon:
+  ConnectTimeout: 90000000
+  ReadTimeout: 90000000
+  OkToRetryOnAllOperation: false
+  eureka:
+    enabled: true
+
+mongodb:
+  database: "centrologistico"
+  host: "192.168.99.100"
+  port: "27017"
+
+security:
+  user:
+    name: admin
+    password: 123456
+    role: SYSTEM

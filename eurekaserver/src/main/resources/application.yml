@@ -1,0 +1,36 @@
+spring:
+  main:
+    banner-mode: "off"
+
+server:
+  port: ${vcap.application.port:8761}
+
+eureka:
+  registration:
+    enabled: true
+  numberRegistrySyncRetries: 1
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+    eviction-interval-timer-in-ms: 1000
+  instance:
+    preferIpAddress: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+ribbon:
+  eureka:
+    enabled: true
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 0
+    OkToRetryOnAllOperations: false
+    ServerListRefreshInterval: 2000
+    ConnectTimeout: 90000000
+    ReadTimeout: 90000000
