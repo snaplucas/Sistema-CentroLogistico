@@ -3,6 +3,7 @@ import domain.model.entities.Pacote;
 import domain.model.entities.Passo;
 import org.junit.Assert;
 import org.junit.Test;
+import port.adapter.specification.validation.ValidationResult;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,5 +29,26 @@ public class EntregaTest {
         entrega.setPacotes(pacotes);
         List<Passo> passos = entrega.definirPassos();
         Assert.assertEquals(passos.size(), 7);
+    }
+
+    @Test
+    public void EntregaInvalidaTest(){
+        Entrega entrega = new Entrega();
+
+        entrega.isValid();
+        ValidationResult validationResult = entrega.getValidationResult();
+        Assert.assertEquals(validationResult.getErros().size(), 3);
+    }
+
+    @Test
+    public void EntregaSemPacotesTest(){
+        Entrega entrega = new Entrega();
+        entrega.setId("1");
+        entrega.setVeiculo("2");
+
+        entrega.isValid();
+        ValidationResult validationResult = entrega.getValidationResult();
+        Assert.assertEquals(validationResult.getErros().size(), 1);
+        Assert.assertEquals(validationResult.getErros().get(0).getMensagem(), "entrega deve ter pacotes");
     }
 }
