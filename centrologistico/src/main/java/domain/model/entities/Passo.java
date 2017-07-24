@@ -8,7 +8,7 @@ public class Passo {
     private Zona de;
     private Zona para;
 
-    public Passo(String pacoteId, Zona de, Zona para) {
+    Passo(String pacoteId, Zona de, Zona para) {
         this.pacoteId = pacoteId;
         this.de = de;
         this.para = para;
