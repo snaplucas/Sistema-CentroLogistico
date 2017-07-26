@@ -3,7 +3,7 @@ package application.interfaces;
 import application.dto.EntregaDto;
 import application.dto.PassoDto;
 import application.exceptions.EntregaException;
-import port.adapter.specification.validation.ValidationResult;
+import shared.specification.validation.ValidationResult;
 
 import java.util.List;
 

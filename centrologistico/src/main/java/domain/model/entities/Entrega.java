@@ -3,7 +3,7 @@ package domain.model.entities;
 import domain.model.enumeradores.Zona;
 import domain.model.validations.EntregaValidation;
 import org.springframework.data.annotation.Transient;
-import port.adapter.specification.validation.ValidationResult;
+import shared.specification.validation.ValidationResult;
 
 import java.util.ArrayList;
 import java.util.Comparator;

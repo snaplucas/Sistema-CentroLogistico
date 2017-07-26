@@ -3,7 +3,7 @@ import domain.model.entities.Pacote;
 import domain.model.entities.Passo;
 import org.junit.Assert;
 import org.junit.Test;
-import port.adapter.specification.validation.ValidationResult;
+import shared.specification.validation.ValidationResult;
 
 import java.util.Arrays;
 import java.util.List;

@@ -5,8 +5,8 @@ import domain.model.specifications.EntregaDeveTerId;
 import domain.model.specifications.EntregaDeveTerPacotes;
 import domain.model.specifications.EntregaDeveTerVeiculo;
 import domain.model.specifications.EntregaPesoMaximoPacotes;
-import port.adapter.specification.validation.Rule;
-import port.adapter.specification.validation.Validation;
+import shared.specification.validation.Rule;
+import shared.specification.validation.Validation;
 
 public class EntregaValidation extends Validation<Entrega> {
 

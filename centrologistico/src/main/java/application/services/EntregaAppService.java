@@ -9,7 +9,7 @@ import domain.model.entities.Entrega;
 import domain.model.entities.Pacote;
 import domain.model.entities.Passo;
 import domain.model.interfaces.IEntregaService;
-import port.adapter.specification.validation.ValidationResult;
+import shared.specification.validation.ValidationResult;
 
 import java.util.List;
 import java.util.stream.Collectors;

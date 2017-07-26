@@ -1,7 +1,7 @@
 package domain.model.specifications;
 
 import domain.model.entities.Entrega;
-import port.adapter.specification.ISpecification;
+import shared.specification.ISpecification;
 
 public class EntregaDeveTerPacotes implements ISpecification<Entrega> {
 

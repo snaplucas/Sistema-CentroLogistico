@@ -2,7 +2,7 @@ package domain.model.specifications;
 
 import domain.model.entities.Entrega;
 import domain.model.entities.Pacote;
-import port.adapter.specification.ISpecification;
+import shared.specification.ISpecification;
 
 public class EntregaPesoMaximoPacotes implements ISpecification<Entrega> {
 
