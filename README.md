@@ -6,8 +6,8 @@ Apos a instalação rodar o QuickStart e executar os passos abaixo na ordem que 
 
 ### docker
   *  com o docker instalado, abrir um terminal e executar os seguintes comandos para especificar a shell a ser usada
-      - docker-machine start <nomeDaMachine>
-      - docker-machine env --shell cmd <nomeDaMachine>
+      - docker-machine start (nomeDaMachine)
+      - docker-machine env --shell cmd (nomeDaMachine)
       - @FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd teste') DO @%i
   *  os proximos comandos deverão ser executados no terminal onde a docker-machine esta rodando
 
@@ -37,7 +37,7 @@ Apos a instalação rodar o QuickStart e executar os passos abaixo na ordem que 
   * executar o comando "docker images" e verificar a imagem recem criada
   * apos a imagem ser contruida, executar o comando "docker run -p 8888:8888 -d api-gateway" para rodar o container
 
-Obs: o IP da maquina virtual do docker costuma ser 192.168.99.100, para confirmar isso rodar o comando "docker-machine ip <nomeDaMachine"
+Obs: o IP da maquina virtual do docker costuma ser 192.168.99.100, para confirmar isso rodar o comando "docker-machine ip (nomeDaMachine)"
 Caso o IP seja diferente será necessário alterar os arquivos application.yml para apontar para o IP correto.
 
 
