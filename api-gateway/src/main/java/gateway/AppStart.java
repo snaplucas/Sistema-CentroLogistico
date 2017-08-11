@@ -1,11 +1,13 @@
 package gateway;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import gateway.clients.EntregaClient;
 import gateway.dto.EntregaDto;
 import gateway.dto.PassoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import java.util.List;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
+@EnableCircuitBreaker
 @RestController
 public class AppStart {
 
@@ -30,6 +33,7 @@ public class AppStart {
     }
 
     @RequestMapping(value = "/entrega/{entregaid}", method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod = "reliable")
     public List<PassoDto> obterPassos(@PathVariable String entregaid) {
         try {
             return entregaClient.obterPassos(entregaid);
@@ -47,5 +51,9 @@ public class AppStart {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    public String reliable() {
+        return "Cloud Native Java (O'Reilly)";
     }
 }
