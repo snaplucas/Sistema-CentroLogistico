@@ -2,6 +2,9 @@ package domain.model.entities;
 
 import domain.model.enumeradores.Zona;
 import domain.model.validations.EntregaValidation;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Transient;
 import shared.specification.validation.ValidationResult;
 
@@ -9,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
 public class Entrega {
 
     private String id;
@@ -24,30 +29,6 @@ public class Entrega {
     public Entrega() {
         this.pacotes = new ArrayList<>();
         this.passos = new ArrayList<>();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getVeiculo() {
-        return veiculo;
-    }
-
-    public void setVeiculo(String veiculo) {
-        this.veiculo = veiculo;
-    }
-
-    public List<Pacote> getPacotes() {
-        return pacotes;
-    }
-
-    public void setPacotes(List<Pacote> pacotes) {
-        this.pacotes = pacotes;
     }
 
     public ValidationResult getValidationResult() {
